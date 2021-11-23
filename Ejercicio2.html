@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gabriel Jaime Velez - Ej2</title>
+  </head>
+
+  <body></body>
+  <script>
+    let inicio = [
+      "unacadena",
+      -3500,
+      -3,
+      -9,
+      -17,
+      10,
+      500,
+      1,
+      100,
+      38,
+      "assdas",
+      -4567,
+      true,
+    ];
+    let soloNumeros = [];
+    limpiarCaracteres();
+    console.log(soloNumeros);
+    inicio = [];
+    let pos;
+
+    while (soloNumeros.length != 0) {
+      let mayor = null;
+      for (let j = 0; j <= soloNumeros.length; j++) {
+        if (soloNumeros[j] > mayor || mayor == undefined) {
+          mayor = soloNumeros[j];
+          pos = j;
+        }
+      }
+      inicio.push(mayor);
+      soloNumeros.splice(pos, 1);
+    }
+
+    function limpiarCaracteres() {
+      for (let i = 0; i < inicio.length; i++) {
+        if (typeof inicio[i] == "number") {
+          soloNumeros.push(inicio[i]);
+        }
+      }
+    }
+
+    console.log(inicio);
+  </script>
+</html>
